@@ -1,6 +1,15 @@
 <template>
+  <ModalComponent
+    :isOpen="isModalOpened"
+    @modal-close="closeModal"
+    name="modal"
+  />
+  <!-- <template #header>Custom header</template>
+    <template #content>Custom content</template>
+    <template #footer>Custom content</template> -->
+  <!-- </ModalComponent> -->
   <div class="grid-container">
-    <div class="grid-item">1</div>
+    <div class="grid-item" @click="openModal">1</div>
     <div class="grid-item">2</div>
     <div class="grid-item">3</div>
     <div class="grid-item">4</div>
@@ -15,7 +24,23 @@
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+// modal related
+import { ref } from "vue";
+import ModalComponent from "../modal/modal.vue";
+
+const isModalOpened = ref(false);
+
+const openModal = () => {
+  isModalOpened.value = true;
+};
+const closeModal = () => {
+  isModalOpened.value = false;
+};
+
+// const submitHandler = ()=>{
+// }
+</script>
 
 <style scoped>
 .grid-container {
