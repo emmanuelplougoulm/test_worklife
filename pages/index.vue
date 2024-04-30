@@ -10,6 +10,20 @@
 import SearchBar from "../components/searchbar/searchbar.vue";
 import Grid from "../components/grid/grid.vue";
 import Button from "../components/button/button.vue";
+
+import httpClient from "../services/httpClient/httpClient";
+
+async function fetchData() {
+  try {
+    const response = await httpClient.get();
+    return response;
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+const result = await fetchData();
+console.log("result", result);
 </script>
 
 <style>
@@ -28,3 +42,5 @@ import Button from "../components/button/button.vue";
   justify-content: center;
 }
 </style>
+
+<!-- apiKey: RujdMKAf -->
