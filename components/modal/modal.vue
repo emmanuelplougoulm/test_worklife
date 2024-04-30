@@ -74,6 +74,13 @@ onClickOutside(target, () => emit("modal-close"));
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-wrapper {
+  flex: 1;
 }
 .modal-container {
   display: flex;
@@ -85,5 +92,21 @@ onClickOutside(target, () => emit("modal-close"));
   background-color: #fff;
   border-radius: 2px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33);
+}
+
+@media screen and (max-width: 768px) {
+  .modal-mask {
+    align-items: flex-end;
+  }
+
+  .modal-footer {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .modal-body {
+    flex-direction: column;
+  }
 }
 </style>
