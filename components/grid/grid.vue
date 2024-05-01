@@ -5,14 +5,14 @@
     name="modal"
   />
   <div class="grid-container">
-    <div
+    <GridItem
+      class="grid-item"
       v-for="artwork in artworks"
       @click="() => openModal(artwork.id)"
       :key="artwork.id"
-      class="grid-item"
-    >
-      {{ artwork.id }}
-    </div>
+      :image-url="artwork.webImage.url"
+      :title="artwork.title"
+    />
   </div>
 </template>
 
@@ -20,6 +20,7 @@
 import { ref } from "vue";
 import { useStore } from "@/stores/store";
 import ModalComponent from "../modal/modal.vue";
+import GridItem from "@/components/grid-item/grid-item.vue";
 
 const store = useStore();
 const { setCurrentArtwork } = store;
@@ -42,7 +43,7 @@ const closeModal = () => {
 .grid-container {
   display: flex;
   flex-wrap: wrap;
-  border: 1px green solid;
+  border: 2px green solid;
   flex: 1;
   margin: 20px 0;
   min-width: 150px;
@@ -51,7 +52,7 @@ const closeModal = () => {
 .grid-item {
   flex: 1 0 25%;
   box-sizing: border-box;
-  border: 1px red solid;
+  /* border: 1px red solid; */
 }
 
 @media screen and (max-width: 768px) {
