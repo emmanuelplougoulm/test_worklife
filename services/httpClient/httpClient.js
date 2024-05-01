@@ -1,15 +1,13 @@
+const API_KEY = "RujdMKAf";
+
 const httpClient = {
-  baseURL:
-    "https://www.rijksmuseum.nl/api/nl/collection?key=RujdMKAf&involvedMaker=Rembrandt+van+Rijn",
+  baseURL: `https://www.rijksmuseum.nl/api/nl/collection?key=${API_KEY}&q=`,
   timeout: 5000,
   headers: {
     "Content-Type": "application/json",
   },
-  get: async function fetchData() {
-    //might use it later
-    // const { pending, data: posts } = await useLazyFetch('/api/posts')
-
-    const reponse = await fetch(this.baseURL);
+  get: async function fetchData(search) {
+    const reponse = await fetch(`${this.baseURL}${search}`);
     return reponse.json();
   },
 };
