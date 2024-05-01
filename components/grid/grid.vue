@@ -36,9 +36,6 @@ const openModal = (id: string) => {
 const closeModal = () => {
   isModalOpened.value = false;
 };
-
-// const submitHandler = ()=>{
-// }
 </script>
 
 <style scoped>
@@ -48,6 +45,7 @@ const closeModal = () => {
   border: 1px green solid;
   flex: 1;
   margin: 20px 0;
+  min-width: 150px;
 }
 
 .grid-item {

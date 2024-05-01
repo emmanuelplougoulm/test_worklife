@@ -1,8 +1,8 @@
 <template>
   <header>
-    <div class="wrapper">
-      <div>logo</div>
-      <div>favorites</div>
+    <div class="header-container">
+      <div class="icon">logo</div>
+      <div class="icon">favorites</div>
     </div>
   </header>
 </template>
@@ -10,11 +10,16 @@
 <script setup lang="ts"></script>
 
 <style scoped>
-.wrapper {
+.header-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border: 1px red solid;
   padding: 15px 60px;
+  border-radius: 8px;
+  background-color: #ffffff;
+  margin: 2px;
+}
+
+.icon {
 }
 </style>

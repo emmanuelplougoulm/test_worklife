@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import "@/styles/globals.css";
 import Header from "../components/header/header.vue";
 </script>
 
@@ -14,16 +15,12 @@ html,
 body {
   margin: 0;
   padding: 0;
-}
-
-body {
-  border: 2px green solid;
+  background-color: #000000;
 }
 
 .layout-container {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  border: 5px black solid;
 }
 </style>

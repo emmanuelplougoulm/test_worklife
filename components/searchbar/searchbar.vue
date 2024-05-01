@@ -1,12 +1,11 @@
 <template>
   <div class="searchbar-container">
     <TextInput v-model="currentSearch" />
-    <div @click="handleSubmit">submit</div>
+    <Button @click="handleSubmit" :text="'Search'" />
   </div>
 </template>
 
 <script setup lang="ts">
-import httpClient from "../../services/httpClient/httpClient";
 import TextInput from "../text-input/text-input.vue";
 
 import { useStore } from "@/stores/store";
@@ -26,16 +25,25 @@ async function handleSubmit() {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border: 1px blue solid;
-  min-height: 3.75rem;
+  gap: 10px;
+  min-height: 3rem;
+  min-width: 150px;
 }
 
 input {
-  flex: 1;
+  flex: 7;
+  padding: 6px;
+  border-radius: 4px;
+  border: 2px black solid;
+  color: #000000;
+  min-width: 50px;
 }
 
-.searchbar-container div {
-  margin-left: 30px;
-  border: 1px red solid;
+input:focus {
+  outline: none;
+}
+
+button {
+  flex: 1;
 }
 </style>

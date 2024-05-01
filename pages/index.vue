@@ -2,7 +2,7 @@
   <div class="content-container">
     <SearchBar />
     <Grid />
-    <div class="button-container"><Button /></div>
+    <div class="button-container"><Button :text="'Load more'"/></div>
   </div>
 </template>
 
@@ -10,31 +10,19 @@
 import SearchBar from "../components/searchbar/searchbar.vue";
 import Grid from "../components/grid/grid.vue";
 import Button from "../components/button/button.vue";
-
-import httpClient from "../services/httpClient/httpClient";
-
-async function fetchData() {
-  try {
-    const response = await httpClient.get();
-    return response;
-  } catch (error) {
-    console.error(error);
-  }
-}
-
-const result = await fetchData();
-console.log("result", result);
 </script>
 
 <style>
 .content-container {
   flex-grow: 1;
+  /* min-height: 100vh; */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   padding: 30px 60px;
-  background-color: aqua;
-  border: 2px solid red;
+  background-color: #ffffff;
+  border-radius: 4px;
+  margin: 2px;
 }
 
 .button-container {
@@ -42,5 +30,3 @@ console.log("result", result);
   justify-content: center;
 }
 </style>
-
-<!-- apiKey: RujdMKAf -->
