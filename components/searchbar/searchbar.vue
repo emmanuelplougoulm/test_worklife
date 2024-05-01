@@ -13,18 +13,11 @@ import { useStore } from "@/stores/store";
 import { storeToRefs } from "pinia";
 
 const store = useStore();
-const { currentSearch, searchResults } = storeToRefs(store);
+const { currentSearch } = storeToRefs(store);
+const { fetchImages } = store;
 
 async function handleSubmit() {
-  try {
-    const response = await httpClient.get(currentSearch.value.value);
-
-    if (response.count > 0) {
-      searchResults.value = { ...response };
-    }
-  } catch (error) {
-    console.error(error);
-  }
+  fetchImages(currentSearch);
 }
 </script>
 

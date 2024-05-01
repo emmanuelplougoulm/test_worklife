@@ -9,25 +9,23 @@
     <template #footer>Custom content</template> -->
   <!-- </ModalComponent> -->
   <div class="grid-container">
-    <div class="grid-item" @click="openModal">1</div>
-    <div class="grid-item">2</div>
-    <div class="grid-item">3</div>
-    <div class="grid-item">4</div>
-    <div class="grid-item">5</div>
-    <div class="grid-item">6</div>
-    <div class="grid-item">7</div>
-    <div class="grid-item">8</div>
-    <div class="grid-item">9</div>
-    <div class="grid-item">10</div>
-    <div class="grid-item">11</div>
-    <div class="grid-item">12</div>
+    <div
+      v-for="artwork in artworks"
+      @click="() => openModal(artwork.id)"
+      :key="artwork.id"
+      class="grid-item"
+    >
+      {{ artwork.id }}
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
 // modal related
 import { ref } from "vue";
+import { useStore } from "@/stores/store";
 import ModalComponent from "../modal/modal.vue";
+const { artworks } = toRefs(store);
 
 const isModalOpened = ref(false);
 
