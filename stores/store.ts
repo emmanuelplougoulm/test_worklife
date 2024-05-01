@@ -6,9 +6,15 @@ export const useStore = defineStore('store', {
     state: () => {
         return {
             currentSearch: { value: '' },
+            currentArtwork: {},
             results: [] as any[],
-            currentPage: 1,
-            perPage: 12
+            currentPage: 0,
+            perPage: 20
+        }
+    },
+    getters: {
+        artworks: (state) => state.results
+    },
     actions: {
         async fetchImages(currentSearch: any) {
             try {
@@ -24,4 +30,14 @@ export const useStore = defineStore('store', {
                 console.error(error);
             }
         },
+        setCurrentArtwork(id: string) {
+            const current = this.$state.results.filter((item) => item.id === id);
+            console.log("current", current);
+            this.$state.currentArtwork = current[0];
+        }
+        // async loadMoreImages() {
+        //     this.currentPage++;
+        //     await this.fetchImages();
+        // }
+    },
 })

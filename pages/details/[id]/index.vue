@@ -1,6 +1,8 @@
 <template>
   <div class="container">
-    <div><button>I am the back button</button></div>
+    <div>
+      <button @click="navigateTo(`/`)">I am the back button</button>
+    </div>
     <div class="modal-body">
       <div class="image">image</div>
       <div class="infos">

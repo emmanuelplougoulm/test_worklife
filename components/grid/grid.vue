@@ -4,10 +4,6 @@
     @modal-close="closeModal"
     name="modal"
   />
-  <!-- <template #header>Custom header</template>
-    <template #content>Custom content</template>
-    <template #footer>Custom content</template> -->
-  <!-- </ModalComponent> -->
   <div class="grid-container">
     <div
       v-for="artwork in artworks"
@@ -21,16 +17,21 @@
 </template>
 
 <script setup lang="ts">
-// modal related
 import { ref } from "vue";
 import { useStore } from "@/stores/store";
 import ModalComponent from "../modal/modal.vue";
+
+const store = useStore();
+const { setCurrentArtwork } = store;
+
 const { artworks } = toRefs(store);
 
 const isModalOpened = ref(false);
 
-const openModal = () => {
+const openModal = (id: string) => {
   isModalOpened.value = true;
+
+  setCurrentArtwork(id);
 };
 const closeModal = () => {
   isModalOpened.value = false;

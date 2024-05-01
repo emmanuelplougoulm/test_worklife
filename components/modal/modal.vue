@@ -1,15 +1,14 @@
 <script setup>
-import { defineProps, defineEmits, ref } from "vue";
-import { onClickOutside } from "@vueuse/core";
+import { useStore } from "@/stores/store";
+import ModalComponent from "../modal/modal.vue";
 
+const store = useStore();
+const id = store.currentArtwork.id;
 const props = defineProps({
   isOpen: Boolean,
 });
 
 const emit = defineEmits(["modal-close"]);
-
-const target = ref(null);
-onClickOutside(target, () => emit("modal-close"));
 </script>
 
 <template>
@@ -25,7 +24,7 @@ onClickOutside(target, () => emit("modal-close"));
         </div>
         <div class="modal-footer">
           <div class="button">button1</div>
-          <div class="button">button2</div>
+          <div class="button" @click="navigateTo(`details/${id}`)">button2</div>
         </div>
       </div>
     </div>
