@@ -1,6 +1,5 @@
-// import { useConfig } from "@/composables/useConfig";
-
-// const config = useConfig();
+import { useConfig } from "@/composables/useConfig";
+const config = useConfig();
 
 const httpClient = {
   baseURL: `https://www.rijksmuseum.nl/api/en/collection?key=RujdMKAf`,
@@ -9,7 +8,7 @@ const httpClient = {
     "Content-Type": "application/json",
   },
   get: async function fetchData(search, currentPage) {
-    const LIMIT = "&ps=30";
+    const LIMIT = "&ps=20";
     const PAGE = `&p=${currentPage}`;
     const SEARCH = `&q=${search}`;
 
