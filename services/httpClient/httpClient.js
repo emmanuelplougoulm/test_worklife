@@ -1,6 +1,3 @@
-import { useConfig } from "@/composables/useConfig";
-const config = useConfig();
-
 const httpClient = {
   baseURL: `https://www.rijksmuseum.nl/api/en/collection?key=RujdMKAf`,
   timeout: 5000,
