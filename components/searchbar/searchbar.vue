@@ -18,6 +18,10 @@ const { fetchImages } = store;
 async function handleSubmit() {
   fetchImages(currentSearch);
 }
+
+onMounted(async () => {
+  fetchImages(currentSearch);
+});
 </script>
 
 <style scoped>

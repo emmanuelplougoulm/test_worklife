@@ -6,6 +6,7 @@
   />
   <div class="grid-container">
     <GridItem
+      v-if="artworks.length > 0"
       class="grid-item"
       v-for="artwork in artworks"
       @click="() => openModal(artwork.id)"
@@ -52,7 +53,6 @@ const closeModal = () => {
 .grid-item {
   flex: 1 0 25%;
   box-sizing: border-box;
-  /* border: 1px red solid; */
 }
 
 @media screen and (max-width: 768px) {
