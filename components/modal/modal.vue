@@ -1,9 +1,15 @@
 <script setup>
 import { useStore } from "@/stores/store";
-import ModalComponent from "../modal/modal.vue";
+import Button from "@/components/button/button.vue";
 
 const store = useStore();
-const id = store.currentArtwork.id;
+
+const currentArtwork = store.currentArtwork;
+
+// const img_url = currentArtwork.webImage.url
+//   ? store.currentArtwork.webImage.url
+//   : "";
+
 const props = defineProps({
   isOpen: Boolean,
 });
@@ -14,17 +20,25 @@ const emit = defineEmits(["modal-close"]);
 <template>
   <div v-if="isOpen" class="modal-mask">
     <div class="modal-wrapper">
-      <div class="modal-container" ref="target">
+      <div class="modal-container">
         <div class="modal-header">
           <div @click.stop="emit('modal-close')" class="header">X</div>
         </div>
         <div class="modal-body">
-          <div class="image">button1</div>
-          <div class="infos">button2</div>
+          <div class="image image-tile">
+            <img :src="img_url" class="image" />
+          </div>
+          <div class="infos">
+            <div class="title">{{ currentArtwork.title }}</div>
+            <div>Description</div>
+          </div>
         </div>
         <div class="modal-footer">
-          <div class="button">button1</div>
-          <div class="button" @click="navigateTo(`details/${id}`)">button2</div>
+          <Button :text="'Add to favorites'" />
+          <Button
+            :text="'View details'"
+            @click="navigateTo(`details/${currentArtwork.id}`)"
+          />
         </div>
       </div>
     </div>
@@ -38,31 +52,37 @@ const emit = defineEmits(["modal-close"]);
 }
 
 .modal-body {
-  border: 1px red solid;
   flex: 1;
   display: flex;
 }
 
 .modal-body .image {
-  border: 1px violet solid;
   flex: 1;
 }
+
 .modal-body .infos {
-  border: 1px violet solid;
+  padding-left: 50px;
   flex: 2;
 }
+
+.modal-body .infos .title {
+  font-size: 20px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
 .modal-footer {
-  border: 1px green solid;
   min-height: 60px;
   display: flex;
-  justify-content: space-around;
 }
+
 .button {
   flex: 1;
   border: 1px black solid;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 4px;
 }
 
 .modal-mask {
@@ -93,6 +113,19 @@ const emit = defineEmits(["modal-close"]);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33);
 }
 
+.image-tile {
+  position: relative;
+  overflow: hidden;
+  width: 100px;
+  height: 100px;
+}
+
+.image-tile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 @media screen and (max-width: 768px) {
   .modal-mask {
     align-items: flex-end;
@@ -109,3 +142,4 @@ const emit = defineEmits(["modal-close"]);
   }
 }
 </style>
+
