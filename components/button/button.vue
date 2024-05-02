@@ -16,10 +16,10 @@ button {
   font: inherit;
   color: inherit;
   cursor: pointer;
-  
-  padding: 4px;
-  border-radius: 4px;
-  border: 2px black solid;
+
+  padding: 0.25rem;
+  border-radius: 0.25rem;
+  border: 0.125rem black solid;
   color: #000000;
 }
 

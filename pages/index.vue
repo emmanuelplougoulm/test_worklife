@@ -2,7 +2,7 @@
   <div class="content-container">
     <SearchBar />
     <Grid />
-    <div class="button-container"><Button :text="'Load more'"/></div>
+    <div class="button-container"><Button :text="'Load more'" /></div>
   </div>
 </template>
 
@@ -15,14 +15,13 @@ import Button from "../components/button/button.vue";
 <style>
 .content-container {
   flex-grow: 1;
-  /* min-height: 100vh; */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 30px 60px;
+  padding: 1.875rem 3.75rem;
   background-color: #ffffff;
-  border-radius: 4px;
-  margin: 2px;
+  border-radius: 0.25rem;
+  margin: 0.125rem;
 }
 
 .button-container {

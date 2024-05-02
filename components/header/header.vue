@@ -14,10 +14,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 60px;
-  border-radius: 8px;
+  padding: 0.9375rem 3.75rem;
+  border-radius: 0.5rem;
   background-color: #ffffff;
-  margin: 2px;
+  margin: 0.125rem;
 }
 
 .icon {

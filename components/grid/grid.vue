@@ -44,10 +44,9 @@ const closeModal = () => {
 .grid-container {
   display: flex;
   flex-wrap: wrap;
-  border: 2px green solid;
   flex: 1;
-  margin: 20px 0;
-  min-width: 150px;
+  margin: 1.25rem 0;
+  min-width: 9.375rem;
 }
 
 .grid-item {

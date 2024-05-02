@@ -29,18 +29,18 @@ onMounted(async () => {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 10px;
+  gap: 0.625rem;
   min-height: 3rem;
-  min-width: 150px;
+  min-width: 9.375rem;
 }
 
 input {
   flex: 7;
-  padding: 6px;
-  border-radius: 4px;
-  border: 2px black solid;
+  padding: 0.375rem;
+  border-radius: 0.25rem;
+  border: 0.125rem black solid;
   color: #000000;
-  min-width: 50px;
+  min-width: 3.125rem;
 }
 
 input:focus {
@@ -49,5 +49,6 @@ input:focus {
 
 button {
   flex: 1;
+  margin: 0.25rem;
 }
 </style>

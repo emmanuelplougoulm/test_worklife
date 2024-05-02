@@ -48,10 +48,10 @@ const addToFavorites = () => {
   flex-grow: 1;
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  padding: 30px 60px;
+  gap: 1.25rem;
+  padding: 1.875rem 3.75rem;
   background-color: #ffffff;
-  border-radius: 8px;
+  border-radius: 0.5rem;
 }
 
 .button-container {
@@ -61,7 +61,7 @@ const addToFavorites = () => {
 
 .details-container {
   display: flex;
-  min-height: 300px;
+  min-height: 18.75rem;
 }
 
 .favorites-container {
@@ -76,26 +76,26 @@ const addToFavorites = () => {
 
 .details-container .image {
   flex: 1;
-  border: 1px black solid;
+  border: 0.0625rem black solid;
 }
 
 .details-container .infos {
   flex: 2;
-  border: 1px black solid;
+  border: 0.0625rem black solid;
 }
 
 .tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 5px;
+  gap: 0.3125rem;
 }
 
 .tags .tag {
   background-color: #ffffff;
-  border-radius: 4px;
-  border: 1px black solid;
+  border-radius: 0.25rem;
+  border: 0.0625rem black solid;
   flex-basis: 25%;
-  padding: 4px;
+  padding: 0.25rem;
 }
 
 .tag:hover {
@@ -105,8 +105,8 @@ const addToFavorites = () => {
 .image-tile {
   position: relative;
   overflow: hidden;
-  width: 100px;
-  height: 100px;
+  width: 6.25rem;
+  height: 6.25rem;
 }
 
 .image-tile img {
@@ -116,13 +116,13 @@ const addToFavorites = () => {
 }
 
 .infos .title {
-  font-size: 20px;
+  font-size: 1.25rem;
   font-weight: 600;
   text-transform: uppercase;
   flex: 2;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 48rem) {
   .favorites-container .empty {
     display: none;
   }
@@ -136,7 +136,7 @@ const addToFavorites = () => {
   }
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 30rem) {
   .modal-body {
     flex-direction: column;
     /* flex:0; */

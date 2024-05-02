@@ -61,28 +61,28 @@ const emit = defineEmits(["modal-close"]);
 }
 
 .modal-body .infos {
-  padding-left: 50px;
+  padding-left: 3.125rem;
   flex: 2;
 }
 
 .modal-body .infos .title {
-  font-size: 20px;
+  font-size: 1.25rem;
   font-weight: 600;
   text-transform: uppercase;
 }
 
 .modal-footer {
-  min-height: 60px;
+  min-height: 3.75rem;
   display: flex;
 }
 
 .button {
   flex: 1;
-  border: 1px black solid;
+  border: 0.0625rem black solid;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 4px;
+  margin: 0.25rem;
 }
 
 .modal-mask {
@@ -105,19 +105,19 @@ const emit = defineEmits(["modal-close"]);
   display: flex;
   flex-direction: column;
   width: 50%;
-  height: 500px;
-  margin: 150px auto;
-  padding: 20px 30px;
+  height: 31.25rem;
+  margin: 9.375rem auto;
+  padding: 1.25rem 1.875rem;
   background-color: #fff;
-  border-radius: 2px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33);
+  border-radius: 0.125rem;
+  box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.33);
 }
 
 .image-tile {
   position: relative;
   overflow: hidden;
-  width: 100px;
-  height: 100px;
+  width: 6.25rem;
+  height: 6.25rem;
 }
 
 .image-tile img {
